@@ -4,8 +4,9 @@ Keeping all of my VIM config stuff in one place. This is a mashup of all the var
 
 ## Installation
 
-    $ cd ~/.vim
-    $ git clone git://github.com/fuchse/vim-config.git
+    $ cd ~
+    $ git clone git://github.com/fuchse/vim-config.git .vim
+    $ cd .vim
     $ git submodule init
     $ cd ~
     $ ln -s ~/.vim/.vimrc .vimrc
