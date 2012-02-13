@@ -14,12 +14,12 @@ Keeping all of my VIM config stuff in one place. This is a mashup of all the var
     $ rake make
 
 ### Ack plugin requires ack, install it with homebrew (http://mxcl.github.com/homebrew/)
-    (see ~/.vim/bundle/ack.vim/README.md for more installation options)
 
     $ brew install ack
     $ cd ~/.vim/bundle/ack.vim
     $ rake install
-
+    
+(see ~/.vim/bundle/ack.vim/README.md for more installation options)
 
 
 ## Plugins, Colors & Syntax Highlighting (currently, this could change)
