@@ -8,6 +8,7 @@ Keeping all of my VIM config stuff in one place. This is a mashup of all the var
     $ git clone git://github.com/fuchse/vim-config.git .vim
     $ cd .vim
     $ git submodule init
+    $ git submodule update
     $ cd ~
     $ ln -s ~/.vim/.vimrc .vimrc
     $ ln -s ~/.vim/.gvimrc .gvimrc
