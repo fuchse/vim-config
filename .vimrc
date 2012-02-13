@@ -1,7 +1,5 @@
 syntax enable
-set background=dark
-colorscheme vividchalk
-"colorscheme pigraph
+"set background=dark
 
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
@@ -31,6 +29,12 @@ set laststatus=2
 
 filetype indent on
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " In text files, always limit the width of text to 78 characters
@@ -57,18 +61,25 @@ if has("cscope")
    set csverb
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
 if &term=="xterm"
-     set t_Co=8
+     set t_Co=256
      set t_Sb=^[[4%dm
      set t_Sf=^[[3%dm
 endif
 
-call pathogen#infect()
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  "colorscheme mac_classic
+  "colorscheme vividchalk 
+  "colorscheme hemisu
+  colorscheme pigraph 
 
+  "Invisible character colors
+  highlight NonText guifg=#4a4a59
+  highlight SpecialKey guifg=#4a4a59
+
+  set hlsearch
+endif
+
+call pathogen#infect()
