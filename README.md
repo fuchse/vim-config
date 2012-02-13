@@ -7,6 +7,9 @@ Keeping all of my VIM config stuff in one place. This is a mashup of all the var
     $ cd ~/.vim
     $ git clone git://github.com/fuchse/vim-config.git
     $ git submodule init
+    $ cd ~
+    $ ln -s ~/.vim/.vimrc .vimrc
+    $ ln -s ~/.vim/.gvimrc .gvimrc
 
 ### And to install Command-T (requires vim running with +ruby support)
 
