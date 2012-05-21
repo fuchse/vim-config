@@ -1,5 +1,5 @@
 syntax enable
-"set background=dark
+set background=dark
 
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
@@ -31,7 +31,9 @@ filetype indent on
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
- 
+
+nmap <leader>B :!test_movie_in_flash<CR>
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
@@ -74,6 +76,7 @@ if &t_Co > 2 || has("gui_running")
   "colorscheme vividchalk 
   "colorscheme hemisu
   colorscheme pigraph 
+  "colorscheme solarized
 
   "Invisible character colors
   highlight NonText guifg=#4a4a59
