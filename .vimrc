@@ -5,6 +5,8 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
 
+set encoding=utf-8
+
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " allow backspacing over everything in insert mode
 set ai                  " always set autoindenting on
@@ -24,8 +26,9 @@ set nowrap          " turn that word-wrap bullshit off
 set number          " gimme my line numbers 
 set tw=0            " stop auto line breaking?
 
-set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
+"set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
+let g:Powerline_symbols = 'fancy'
 
 filetype indent on
 
@@ -46,6 +49,8 @@ if has("autocmd")
   \ if line("'\"") > 0 && line ("'\"") <= line("$") |
   \   exe "normal! g'\"" |
   \ endif
+  
+  au BufRead,BufNewFile *.ejs setfiletype html
 endif
 
 if has("cscope")
@@ -84,5 +89,8 @@ if &t_Co > 2 || has("gui_running")
 
   set hlsearch
 endif
+
+nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+nnoremap <F3> :NumbersToggle<CR>
 
 call pathogen#infect()
