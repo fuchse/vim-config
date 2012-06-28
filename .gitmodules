@@ -18,7 +18,7 @@
 	url = git://github.com/fmeyer/vim-pigraph.git
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
-	url = git://github.com/corntrace/bufexplorer.git
+	url = git@github.com:corntrace/bufexplorer.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
