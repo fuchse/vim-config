@@ -28,6 +28,8 @@ set tw=0            " stop auto line breaking?
 
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
+
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
 let g:Powerline_symbols = 'fancy'
 
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
@@ -78,8 +80,8 @@ endif
 if &t_Co > 2 || has("gui_running")
   "colorscheme mac_classic
   "colorscheme vividchalk 
-  "colorscheme hemisu
-  colorscheme pigraph 
+  colorscheme hemisu
+  "colorscheme pigraph 
   "colorscheme solarized
 
   "Invisible character colors

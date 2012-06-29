@@ -11,7 +11,8 @@ if has("gui_macvim")
   highlight NonText guifg=#4a4a59
   highlight SpecialKey guifg=#4a4a59
 
-  set guifont=Droid\ Sans\ Mono:h13
+  set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
+  set guioptions=egmrt
 
   "macmenu &File.New\ Tab key=<nop>
   "map <D-t> :CommandT<CR>
