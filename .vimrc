@@ -30,12 +30,10 @@ set tw=0            " stop auto line breaking?
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+
 filetype indent on
 
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-
-nmap <leader>B :!test_movie_in_flash<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
@@ -50,7 +48,8 @@ if has("autocmd")
   \   exe "normal! g'\"" |
   \ endif
   
-  au BufRead,BufNewFile *.ejs setfiletype html
+  " autocmd BufLeave,FocusLost * silent! wall
+  autocmd BufRead,BufNewFile *.ejs setfiletype html
 endif
 
 if has("cscope")
@@ -90,7 +89,30 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
+
+nmap <leader>l :set list!<CR>
+nmap <leader>B :!test_movie_in_flash<CR>
+
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
-nnoremap <F3> :NumbersToggle<CR>
+nnoremap <silent> <Leader>n :NumbersToggle<CR>
+nnoremap <silent> <Leader>y :TagbarToggle<CR>
+
+execute "silent! source ~/.vimrc.local"
+
 
 call pathogen#infect()
