@@ -1,3 +1,27 @@
+# VIM Generated Files #
+#######################
+*.swp
+*.swo
 .netrwhist
-.DS_Store
 .netrwbook
+
+# OS Generated Files #
+######################
+.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Ruby Environment Config #
+###########################
+.rbenv-version
+.rvmrc
+
+# Logs and databases #
+######################
+*.log
