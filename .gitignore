@@ -29,3 +29,7 @@ Thumbs.db
 # Application Generated Files #
 ###############################
 .sass-cache
+
+# Not Sure Where This Came From #
+#################################
+tmp

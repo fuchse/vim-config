@@ -28,6 +28,9 @@ set nowrap          " turn that word-wrap bullshit off
 set number          " gimme my line numbers 
 set tw=0            " stop auto line breaking?
 
+set undofile
+set undodir=~/.vim/tmp
+
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
 
@@ -41,6 +44,7 @@ filetype indent on
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -115,6 +119,10 @@ nmap <leader>B :!test_movie_in_flash<CR>
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 nnoremap <silent> <Leader>n :NumbersToggle<CR>
 nnoremap <silent> <Leader>y :TagbarToggle<CR>
+nnoremap <silent> <Leader>u :GundoToggle<CR>
+
+inoremap <C-\>> <C-R>=GetCloseTag()<CR>
+map <C-\>> a<C-_><ESC>
 
 execute "silent! source ~/.vimrc.local"
 
