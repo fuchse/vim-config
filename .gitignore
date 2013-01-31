@@ -4,6 +4,7 @@
 *.swo
 .netrwhist
 .netrwbook
+.undodir
 
 # OS Generated Files #
 ######################

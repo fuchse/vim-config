@@ -33,7 +33,7 @@ set number          " gimme my line numbers
 set tw=0            " stop auto line breaking?
 
 set undofile
-set undodir=~/.vim/undodir
+set undodir=~/.vim/.undodir
 set undolevels=1000
 set undoreload=10000
 
