@@ -33,7 +33,9 @@ set number          " gimme my line numbers
 set tw=0            " stop auto line breaking?
 
 set undofile
-set undodir=~/.vim/tmp
+set undodir=~/.vim/undodir
+set undolevels=1000
+set undoreload=10000
 
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
