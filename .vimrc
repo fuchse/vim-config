@@ -1,4 +1,8 @@
 syntax enable
+
+filetype plugin on
+filetype indent on
+
 set background=dark
 
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
@@ -34,12 +38,18 @@ set undodir=~/.vim/tmp
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
 
+let g:netrw_liststyle=3
+let g:netrw_list_hide= '.*\.DS_Store$'
+
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
 let g:Powerline_symbols = 'fancy'
 
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
 
-filetype indent on
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
 
 
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -58,6 +68,7 @@ if has("autocmd")
   
   " autocmd BufLeave,FocusLost * silent! wall
   autocmd BufRead,BufNewFile *.ejs setfiletype html
+  autocmd BufNewFile,BufRead *.json set ft=javascript
 endif
 
 if has("cscope")
@@ -120,11 +131,26 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 nnoremap <silent> <Leader>n :NumbersToggle<CR>
 nnoremap <silent> <Leader>y :TagbarToggle<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
+nnoremap <silent> <C-b> :CtrlPBuffer<CR>
 
-inoremap <C-\>> <C-R>=GetCloseTag()<CR>
-map <C-\>> a<C-_><ESC>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+if has("gui_running")
+    " C-Space seems to work under gVim on both Linux and win32
+    inoremap <C-Space> <C-n>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <C-n>
+  else
+  " I have no idea of the name of Ctrl-Space elsewhere
+  endif
+endif
 
 execute "silent! source ~/.vimrc.local"
-
 
 call pathogen#infect()

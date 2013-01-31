@@ -55,3 +55,12 @@
 [submodule "/Users/ethanfuchs/.vim/bundle/gundo"]
 	path = /Users/ethanfuchs/.vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/loremipsum.git"]
+	path = bundle/loremipsum.git
+	url = git://github.com/vim-scripts/loremipsum.git
+[submodule "bundle/matchtag"]
+	path = bundle/matchtag
+	url = git://github.com/gregsexton/MatchTag.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
