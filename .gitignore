@@ -5,6 +5,7 @@
 .netrwhist
 .netrwbook
 .undodir
+session
 
 # OS Generated Files #
 ######################
@@ -31,6 +32,7 @@ Thumbs.db
 ###############################
 .sass-cache
 .settings
+.allow-devtools-edit
 
 # Not Sure Where This Came From #
 #################################

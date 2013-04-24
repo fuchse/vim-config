@@ -64,3 +64,6 @@
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/vimt-gitgutter"]
+	path = bundle/vimt-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git

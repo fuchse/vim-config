@@ -32,6 +32,9 @@ set nowrap          " turn that word-wrap bullshit off
 set number          " gimme my line numbers 
 set tw=0            " stop auto line breaking?
 
+set splitbelow
+set splitright
+
 set undofile
 set undodir=~/.vim/.undodir
 set undolevels=1000
@@ -40,6 +43,14 @@ set undoreload=10000
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ [\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}]%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b
 set laststatus=2
 
+set shortmess=filnxtToO
+
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_show_sessions = 1
+let g:startify_show_files = 1
+let g:startify_show_files_number = 10
+let g:startify_bookmarks = [ '~/.vimrc' ]
+
 let g:netrw_liststyle=3
 let g:netrw_list_hide= '.*\.DS_Store$'
 
@@ -47,6 +58,21 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline:h14
 let g:Powerline_symbols = 'fancy'
 
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+
+let g:enable_numbers = 0
+
+let g:syntastic_js_checkers=['jshint']
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_quite_warnings = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
@@ -134,6 +160,7 @@ nnoremap <silent> <Leader>n :NumbersToggle<CR>
 nnoremap <silent> <Leader>y :TagbarToggle<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <silent> <C-b> :CtrlPBuffer<CR>
+nnoremap <silent> <C-j> :SyntasticToggleMode<CR>
 
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
