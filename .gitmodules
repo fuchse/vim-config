@@ -67,3 +67,6 @@
 [submodule "bundle/vimt-gitgutter"]
 	path = bundle/vimt-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = https://github.com/wookiehangover/jshint.vim.git
